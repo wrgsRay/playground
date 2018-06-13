@@ -1,6 +1,11 @@
-import os
+'''
+List all folders and files in a folder
+'''
 
-for folderName, subfolders, filenames in os.walk('C:\\Users\\Century Products #4\\Documents\\FBA Shipment'):
+import os
+targetPath = 'D:\\Python' #Set path here
+
+for folderName, subfolders, filenames in os.walk(targetPath):
    # print('The current folder is ' + folderName)
 
     for subfolder in subfolders:
