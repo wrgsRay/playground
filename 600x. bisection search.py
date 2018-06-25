@@ -42,7 +42,7 @@ while abs(ans**3 - x) >= epsilon:
     ans = (high + low) / 2.0
 print('numGuesses = ' + str(numGuesses))
 print(str(ans) + ' is close to cube root of ' + str(x))
-'''
+
 
 x = int(input('Please think of a number between 0 and 100!'))
 low = 0
@@ -63,3 +63,25 @@ while userInput != 'c':
         print('Is your secret number ' + str(ans) + '?')
     ans = (high + low)//2
 print('Game over. Your secret number was: ' + str(ans))
+'''
+
+x = int(input('Please think of a number between 0 and 100!'))
+low = 0
+high = 101
+ans = (high + low)//2
+userInput = ''
+print('Is your secret number ' + str(ans) + '?')
+userInput = input('Enter \'h\' to indicate the guess is too high. Enter \'l\' to indicate the guess is too low. Enter \'c\' to')
+
+while userInput != 'c':
+    if userInput == 'h':
+        high = ans
+        ans = (high + low)//2
+        print('Is your secret number ' + str(ans) + '?')
+        userInput = input('Enter \'h\' to indicate the guess is too high. Enter \'l\' to indicate the guess is too low. Enter \'c\' to')
+    elif userInput == 'l':
+        low = ans
+        ans = (low + high)//2
+        print('is your secret number ' + str(ans) + '?')
+        userInput = input('Enter \'h\' to indicate the guess is too high. Enter \'l\' to indicate the guess is too low. Enter \'c\' to')
+print('Game over. Your secret number was: '+ str(ans))
