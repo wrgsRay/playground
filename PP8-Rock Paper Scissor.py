@@ -26,5 +26,5 @@ if __name__ == '__main__':
                 p2 = p2.lower()[:1]
                 break
         print(rps(p1, p2))
-        if input('Would you like to play another one? type no to stop').lower() == 'no':
+        if input('Would you like to play another one? type \'no\' to stop and anything to play again').lower() == 'no':
             break
