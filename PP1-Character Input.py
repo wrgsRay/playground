@@ -11,7 +11,7 @@ if __name__ == '__main__':
             userAge = input('What is your age?(a whole number please)')
     thisYear = datetime.now().year
     year100 = int(thisYear) + (100 - userAge)
-    print(f'You will be 100 on the year of {year100}')
+    print(f'{userName}, you will be 100 on the year of {year100}')
     repeatTimes = input('How many times should I repeat this message?')
     while True:
         try:
@@ -19,4 +19,4 @@ if __name__ == '__main__':
             break
         except ValueError:
             repeatTimes = input('How many times should I repeat this message?(a whole number please)')
-    print(f'You will be 100 on the year of {year100}\n' * repeatTimes)
+    print(f'{userName}, you will be 100 on the year of {year100}\n' * repeatTimes)
