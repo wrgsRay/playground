@@ -3,7 +3,6 @@ if __name__ == '__main__':
     answer = random.randint(1, 9)
     guesses = 0
     num = input('Guess a number between 1 and 9. Type exit to exit.')
-    print(answer)
     while True:
         try:
             num = int(num)
