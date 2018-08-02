@@ -1,5 +1,5 @@
 import pprint
-message = 'It was a bright cold day in April, and the clocks were striking thirteen.'
+message = '1334'
 count = {}
 
 for character in message:
