@@ -10,4 +10,17 @@ if __name__ == '__main__':
         newpass = ''.join(passlist)
         return newpass
 
-    print(makepass(20))
+    passdigit = input('How many digits do you want the pass word to be?')
+    while True:
+        try:
+            passdigit = int(passdigit)
+            break
+        except ValueError:
+            passdigit = input('Please use numbers only. How many digits?')
+
+    print(f'Your new passwords:')
+    print(makepass(passdigit))
+    print(makepass(passdigit))
+    print(makepass(passdigit))
+    print(makepass(passdigit))
+    print(makepass(passdigit))
