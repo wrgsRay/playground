@@ -5,8 +5,8 @@ def cowsbulls(guess, answer):
     cows = 0
     bulls = 0
     missed = list()
-    print(guess)
-    print(answer)
+    print(f'DEBUG: user input: {guess}')
+    print(f'DEBUG: answer is:  {answer}')
     if guess == answer:
         return True
     else:
@@ -22,23 +22,11 @@ def cowsbulls(guess, answer):
                 bulls += 1
         return cows, bulls
 
-'''
-def validate():
-    userinput = input('Input a 4-digit number')
-    while True:
-        if len(userinput) == 4 and userinput.isdecimal():
-            break
-            return int(userinput)
-        else:
-            userinput = input('Try again')
-'''
-
-
 
 def main():
     answer = random.randint(1000, 9999)
-    print(answer)
-    check = int(input('enter 4-digit'))
+    print(f'DEBUG: answer is {answer}')
+    check = input('enter 4-digit')
     while True:
         result = cowsbulls(check, answer)
         if result is True:
