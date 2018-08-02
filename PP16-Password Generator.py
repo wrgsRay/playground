@@ -3,7 +3,7 @@ import string
 
 if __name__ == '__main__':
     def makepass(digit):
-        passwordpool = string.ascii_letters + '!#$%*+_-@'
+        passwordpool = string.ascii_letters + '!#$%*+_-@1234567890'
         passlist = list()
         while len(passlist) < digit:
             passlist.append(choice(passwordpool))
