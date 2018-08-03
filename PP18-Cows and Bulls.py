@@ -4,7 +4,6 @@ import random
 def cowsbulls(guess, answer):
     cows = 0
     bulls = 0
-    missed = list()
     print(f'DEBUG: user input: {guess}')
     print(f'DEBUG: answer is:  {answer}')
     if guess == answer:
@@ -13,20 +12,24 @@ def cowsbulls(guess, answer):
         guess = list(str(guess))
         answer = list(str(answer))
         for i in range(4):
-            if guess[i] == answer[i]:
-                cows += 1
-            else:
-                missed.append(answer[i])
-        for b in guess:
-            if b in missed:
-                bulls += 1
+            if guess[i] in answer:
+                if guess[i] == answer[i]:
+                    print(f'current: {i} DEBUG: cows + 1')
+                    cows += 1
+                    continue
+                else:
+                    print(f'current: {i} DEBUG: bulls + 1')
+                    bulls += 1
+                    continue
+
         return cows, bulls
 
 
 def main():
-    answer = random.randint(1000, 9999)
+    # answer = random.randint(1000, 9999)
+    answer = '0125'
     print(f'DEBUG: answer is {answer}')
-    check = input('enter 4-digit')
+    check = input('enter 4-digit(please input 5551)')
     while True:
         result = cowsbulls(check, answer)
         if result is True:
