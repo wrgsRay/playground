@@ -27,7 +27,7 @@ def cowsbulls(guess, answer):
 
 def main():
     # answer = random.randint(1000, 9999)
-    answer = '0125'
+    answer = '1025'
     print(f'DEBUG: answer is {answer}')
     check = input('enter 4-digit(please input 5551)')
     while True:
