@@ -1,3 +1,8 @@
+'''
+Python 3.6
+@Author wrgsRay
+'''
+
 import random
 
 
@@ -12,7 +17,7 @@ def cowsbulls(guess, answer):
         guess = list(str(guess))
         answer = list(str(answer))
         for i in range(4):
-            if guess[i] in answer:
+            if answer[i] in guess:
                 if guess[i] == answer[i]:
                     print(f'current: {i} DEBUG: cows + 1')
                     cows += 1
@@ -26,8 +31,8 @@ def cowsbulls(guess, answer):
 
 
 def main():
-    # answer = random.randint(1000, 9999)
-    answer = '0125'
+    answer = random.randint(1000, 9999)
+    # answer = '0125'
     print(f'DEBUG: answer is {answer}')
     check = input('enter 4-digit(please input 5551)')
     while True:
