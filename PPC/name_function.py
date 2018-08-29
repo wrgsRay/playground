@@ -1,0 +1,17 @@
+"""
+Python 3.6
+@Author: wrgsRay
+"""
+
+
+def get_formatted_name(first, last):
+    full_name = f'{first} {last}'
+    return full_name.title()
+
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
