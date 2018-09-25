@@ -4,29 +4,33 @@ Python 3.6
 """
 dec_values = {}
 alpha = 'ABCDEF'
+"""Used enumerate to generate a dictionary for ABCDEF in format of {'A': 10} and so on"""
 for c, v in enumerate(alpha, 10):
     dec_values[v] = c
 
 
 def check_value(value):
     if value == '':
-        return False
+        return False  # Return False if input is empty
     validinputs = '0123456789ABCDEF'
     for character in value:
         if character not in validinputs:
-            return False
+            return False  # Return False if any character is not within validinputs
     return True
 
 
 def convert_hex(value):
-    power = 0
-    result = 0
-    for digit in value[::-1]:
+    """Convert hex to decimal using this equation:"""
+    """x * 16 ** power"""
+    power = 0  # Initialize the power as 0 for the first digit
+    result = 0  # Initialize the result
+    for digit in value[::-1]:  # Grab character in reversed order, eg. 2AFB input would be BFA2
         try:
-            result += int(digit) * 16 ** power
+            result += int(digit) * 16 ** power  # If this character is an integer, do the math
         except ValueError:
+            # If this character is not an integer, get value by using dictionary declared
             result += dec_values[digit] * 16 ** power
-        power += 1
+        power += 1  # Increase power by 1 as the program moves to the next digit
     return result
 
 
