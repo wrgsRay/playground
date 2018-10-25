@@ -5,6 +5,30 @@ Python 3.6
 import time
 
 
+class Shipment:
+    def __init__(self, last_page, total_pallet, pallet_list=[], current_pallet):
+        self.last_page = last_page
+        self.total_pallet = total_pallet
+        self.pallet_list = pallet_list
+        self.current_pallet = current_pallet
+
+    def get_pallet_input(self):
+        while True:
+            pallet_input = input(f'Please enter carton number for Pallet {self.current_pallet}, enter nothing to stop ')
+            if pallet_input == '':
+                break
+            else:
+                pallet_input = int(pallet_input)
+                self.pallet_list.append(pallet_input)
+                print(f'Pallet {self.current_pallet}: {pallet_input}')
+                self.current_pallet += 1
+
+
+def amz():
+    shipment = Shipment(1, 10, [], 1)
+    shipment.get_pallet_input()
+
+
 def main():
     last_page = int(input('Please enter the last page number(eg. 1064) '))
     pallet_total = int(input('Please enter the total number of pallets(eg. 24) '))
@@ -38,4 +62,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    amz()
