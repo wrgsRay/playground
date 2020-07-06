@@ -7,6 +7,7 @@ from tkinter import filedialog
 target_file_name = '[JoJo no Kimyou na Bouken Ougon no Kaze][01][BDRIP][1080P][H264_FLAC_DTS-HDMA].ass'
 raw_formats = ['.ASS', '.SRT']  # Include raw formats to scan
 
+
 def main():
     root = tk.Tk()
     root.withdraw()
@@ -17,6 +18,5 @@ def main():
         quit()
 
 
-if '__name__' == '__main__':
+if __name__ == '__main__':
     main()
-    
