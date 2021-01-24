@@ -100,6 +100,7 @@ def main():
 
 
 def blackjack():
+    cls()
     your_hand = list()
     pc_hand = list()
     print(logo)
