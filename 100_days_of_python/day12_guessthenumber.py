@@ -16,33 +16,38 @@ difficulty_attempts = {
 }
 
 
-def check_answer(answer_input, guess):
-    if guess == answer_input:
+def check_answer(answer_input, guess_input):
+    if guess_input == answer_input:
         return 'correct'
-    elif guess > answer_input:
+    elif guess_input > answer_input:
         return 'high'
     else:
         return 'low'
 
 
-answer = randint(starting_range, ending_range)
-print(logo)
-print("Welcome to the Number Guessing Game!")
-print(f"I'm thinking of a number between {starting_range} and {ending_range}.")
-print(f"Pssst, the correct answer is {answer}")
-difficulty = input("Choose a difficulty. Type 'easy' or 'hard':").lower()[0]
-attempts = difficulty_attempts[difficulty]
-while attempts > 0:
-    print(f"You have {attempts} attempts remaining to guess the number")
-    guess = int(input("Make a guess:"))
-    if check_answer(answer_input=answer, guess=guess) == 'high':
-        print("Too high")
-        print('Guess again.')
+def main():
+    answer = randint(starting_range, ending_range)
+    print(logo)
+    print("Welcome to the Number Guessing Game!")
+    print(f"I'm thinking of a number between {starting_range} and {ending_range}.")
+    print(f"Pssst, the correct answer is {answer}")
+    difficulty = input("Choose a difficulty. Type 'easy' or 'hard':").lower()[0]
+    attempts = difficulty_attempts[difficulty]
+    while attempts > 0:
+        print(f"You have {attempts} attempts remaining to guess the number")
+        guess = int(input("Make a guess:"))
+        if check_answer(answer_input=answer, guess_input=guess) == 'high':
+            print("Too high")
+        elif check_answer(answer_input=answer, guess_input=guess) == 'low':
+            print("Too low")
+        else:
+            print(f"You got it! The answer was {answer}.")
+            break
         attempts -= 1
-    elif check_answer(answer_input=answer, guess=guess) == 'low':
-        print("Too low")
-        print('Guess again.')
-        attempts -= 1
-    else:
-        print(f"You got it! The answer was {answer}.")
-        break
+        if attempts != 0:
+            print('Guess again.')
+    print("You've run out of guesses, you lose.")
+
+
+if __name__ == '__main__':
+    main()
