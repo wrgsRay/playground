@@ -29,7 +29,7 @@ def main(entry_a, entry_b, score_input):
     print(f"Compare A: {entry_a['name']}, a {entry_a['description']}, from {entry_a['country']}")
     print(vs)
     print(f"Against B: {entry_b['name']}, a {entry_b['description']}, from {entry_b['country']}")
-    guess = input("Who has more followers? Type 'A' or 'B': ").lower()
+    guess = input("Who has more followers? Type 'A' or 'B': ").lower()[0]
     if guess[0] == compare_score(entry_a['follower_count'], entry_b['follower_count']):
         return guess
     else:
