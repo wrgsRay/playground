@@ -47,8 +47,7 @@ def check_resources(current_resources, customer_choice):
     for item in customer_choice['ingredients']:
         if customer_choice['ingredients'][item] > current_resources[item]:
             return f" Sorry there is not enough {item}"
-        else:
-            return 'ok'
+        return 'ok'
 
 
 def deduct_resources(current_resources, customer_choice):
