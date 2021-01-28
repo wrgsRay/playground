@@ -15,12 +15,10 @@ def main():
         elif choice == 'off':
             exit()
         elif menu.find_drink(choice):
-            for i in range(len(menu.menu) - 1):
-                if choice == menu.menu[i].name:
-                    drink = menu.menu[i]
-                    if machine.is_resource_sufficient(drink):
-                        if cashier.make_payment(drink.cost):
-                            machine.make_coffee(drink)
+            drink = menu.find_drink(choice)
+            if machine.is_resource_sufficient(drink):
+                if cashier.make_payment(drink.cost):
+                    machine.make_coffee(drink)
 
 
 if __name__ == "__main__":
