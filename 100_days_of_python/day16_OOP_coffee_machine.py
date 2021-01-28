@@ -12,6 +12,8 @@ def main():
         if choice == 'report':
             machine.report()
             cashier.report()
+        elif choice == 'off':
+            exit()
         elif menu.find_drink(choice):
             for i in range(len(menu.menu) - 1):
                 if choice == menu.menu[i].name:
