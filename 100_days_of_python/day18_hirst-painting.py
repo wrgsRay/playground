@@ -15,16 +15,20 @@ tim = t.Turtle()
 t.colormode(255)
 tim.pensize(1)
 tim.speed(0)
-
-y_pos = 0.0
-while y_pos <= 500.0:
+tim.setheading(225)
+tim.penup()
+tim.forward(250)
+tim.setheading(0)
+starting_pos = tim.pos()
+y_pos = starting_pos[1]
+while y_pos <= (starting_pos[1] + 500.0):
     for _ in range(10):
         tim.color(choice(color_list))
         tim.dot(20)
         tim.penup()
         tim.forward(50)
     y_pos += 50.0
-    tim.goto(0.0, y_pos)
+    tim.goto(starting_pos[0], y_pos)
 tim.hideturtle()
 
 screen = t.Screen()
