@@ -18,7 +18,7 @@ if __name__ == '__main__':
         return True
 
 
-    if checkprime(getnumber()) is True:
+    if checkprime(getnumber()):
         print(f'That number was a prime number')
     else:
         print(f'That number was not a prime number.')
